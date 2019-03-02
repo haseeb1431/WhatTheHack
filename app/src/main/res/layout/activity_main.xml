@@ -21,10 +21,64 @@
         android:hint="Search"
         />
 
+    <HorizontalScrollView
+        android:id="@+id/filters"
+        android:layout_below="@id/searchFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filter"
+                />
+
+            <TextView
+                android:id="@+id/filter0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filter"
+                android:layout_marginLeft="8dp"
+                android:background="#324DD4"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/filter1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filter"
+                android:layout_marginLeft="8dp"
+                android:background="#324DD4"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/filter2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filter"
+                android:layout_marginLeft="8dp"
+                android:background="#324DD4"
+                android:visibility="gone"
+                />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/searchFilter"
+        android:layout_below="@+id/filters"
         android:id="@+id/theList"/>
 
 

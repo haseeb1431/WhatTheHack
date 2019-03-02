@@ -20,6 +20,10 @@
         <activity android:name=".Haseeb">
 
         </activity>
+
+        <activity android:name=".Filter">
+
+        </activity>
     </application>
 
 </manifest>

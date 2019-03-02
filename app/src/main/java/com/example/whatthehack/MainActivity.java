@@ -1,6 +1,7 @@
 package com.example.whatthehack;
 
 import android.content.Intent;
+import android.os.health.SystemHealthManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -11,8 +12,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -21,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayAdapter adapter;
     ArrayList<String> names;
+    Button btnFilter;
+    public static String filters[] = { "Depression", "Pneumonia", "Asthma" };
+    // sorry for this
+    public static boolean current_filters[] = { false, false, true };
+
+    TextView filter0, filter1, filter2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
 
         ListView list = (ListView) findViewById(R.id.theList);
         EditText theFilter = (EditText) findViewById(R.id.searchFilter);
+        btnFilter = findViewById(R.id.filter);
+
+        filter0 = findViewById(R.id.filter0);
+        filter1 = findViewById(R.id.filter1);
+        filter2 = findViewById(R.id.filter2);
 
         names = new ArrayList<>();
         names.add("Mitch");
@@ -68,6 +82,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Filter.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -76,6 +97,17 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
         return true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        TextView filterViews[] = {filter0, filter1, filter2};
+        for (int i = 0; i < filterViews.length; i++) {
+            if (current_filters[i]) filterViews[i].setVisibility(View.VISIBLE);
+            else filterViews[i].setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -96,4 +128,5 @@ public class MainActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
         return super.onOptionsItemSelected(item);
     }
+
 }
