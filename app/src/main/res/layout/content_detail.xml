@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".DetailActivity"
+    tools:showIn="@layout/activity_detail">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="298dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="8dp"
+        android:text="Immunology"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="48dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="366dp"
+        android:layout_height="406dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="76dp"
+        android:text="Immunology, the scientific study of the body’s resistance to invasion by other organisms (i.e., immunity). In a medical sense, immunology deals with the body’s system of defense against disease-causing microorganisms and with disorders in that system’s functioning.  The artificial induction of immunity against disease has been known in the West at least since Edward Jenner used cowpox injections to protect people from smallpox in 1796. But the scientific basis for immunology was not established until a century later, when it was recognized that: (1) proliferating microorganisms in the body cause many infectious diseases and (2) the body has certain chemical and cellular components that recognize and destroy foreign substances (antigens) within the body.  "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+</android.support.constraint.ConstraintLayout>
